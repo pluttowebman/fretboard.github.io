@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guitar Notes Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align buttons to the right within their container */
+            margin-right: 20px;
+        }
+        .buttons button {
+            margin: 5px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .note-image {
+            margin-left: 20px;
+        }
+        .note-image img {
+            max-width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guitar Notes Viewer</h1>
+    <div class="content">
+        <div class="buttons">
+            <button onclick="showNoteImage('C')">C</button>
+            <button onclick="showNoteImage('D')">D</button>
+            <button onclick="showNoteImage('E')">E</button>
+            <button onclick="showNoteImage('F')">F</button>
+            <button onclick="showNoteImage('G')">G</button>
+            <button onclick="showNoteImage('A')">A</button>
+            <button onclick="showNoteImage('B')">B</button>
+        </div>
+        <div class="note-image" id="noteImage"></div>
+    </div>
+
+    <script>
+        function showNoteImage(note) {
+            const noteImageDiv = document.getElementById('noteImage');
+            noteImageDiv.innerHTML = `<img src="images/${note}.jpeg" alt="${note} Note">`;
+        }
+
+        // Display C note image by default on load
+        window.onload = function() {
+            showNoteImage('C');
+        };
+    </script>
+</body>
+</html>
